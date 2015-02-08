@@ -84,6 +84,11 @@ angular.module('pickadate').directive('pickATime', function () {
                         return;
                     }
                     var select = element.pickatime('picker').get('select'); // selected date
+                    
+                    if(!select){
+                        return;
+                    }
+                    
                     scope.$apply(function () {
                         if (e.hasOwnProperty('clear')) {
                             scope.pickATime = null;
